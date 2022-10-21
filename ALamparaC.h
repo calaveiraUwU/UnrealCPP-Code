@@ -18,15 +18,22 @@ public:
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
-
+	
+	//Para poder ver las propiedades des de cualquier sitio pero de tipo lectura.
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
-	class UStaticMeshComponent* Mesh;
+	class UStaticMeshComponent* Mesh;//Declaramos el componente de la principal para luego en el editor asignarle un static mesh. (Class es para no incluir las clases en el .h)
+	
+	//Para poder ver las propiedades des de cualquier sitio pero de tipo lectura.
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
-	class UStaticMeshComponent* SecondMesh;
+	class UStaticMeshComponent* SecondMesh;//Declaramos el componente de la secundario para luego en el editor asignarle un static mesh.
+	
+	//Para poder ver las propiedades des de cualquier sitio y poderlas editar.
 	UPROPERTY(VisibleAnywhere, BlueprintReadWrite)
-	float speed = 100.f;
+	float speed = 100.f;//Declaramos y definimos la velocidad estandar de el objeto.
+	
+	//
 	UFUNCTION(BlueprintCallable)
-	void IncreaseSpeed();
+	void IncreaseSpeed(); //Creamos una función para poder ir incrementando la velocidad del objeto.
 public:	
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
