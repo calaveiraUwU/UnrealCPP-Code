@@ -15,12 +15,15 @@ public:
 	// Sets default values for this actor's properties
 	ALaser();
 
+	//El objeto que almacenará el láser.
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
-		class UStaticMeshComponent* canionMesh;
-
+	class UStaticMeshComponent* canionMesh;
+		
+	//La velocidad a la que irá.
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
 		float speed;
-
+	
+	//Los párametros que le pasaremos al instanciar.
 	void SetLaserVariables(float speedVal);
 protected:
 	// Called when the game starts or when spawned
